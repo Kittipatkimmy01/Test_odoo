@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+    <record id="test" model="ir.ui.view">
+        <field name="name">test</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='company_id']" position="before">
+                <field name="order_type"/>
+                <field name="rientation" widget="selection"/>
+            </xpath>
+        </field>
+    </record>
+
+        <record id="test_sale" model="ir.ui.view">
+        <field name="name">test</field>
+        <field name="model">crm.team</field>
+        <field name="inherit_id" ref="sales_team.crm_team_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="select_show_option" string="Is show selected" widget="radio"/>
+            </xpath>
+        </field>
+    </record>
+</data>
+</odoo>
